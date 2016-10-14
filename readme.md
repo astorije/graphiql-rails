@@ -42,7 +42,7 @@ You can override `GraphiQL::Rails.config` values in an initializer (eg, `config/
 
 
     ```ruby
-    GraphiQL::Rails.config.headers['Authorization'] = -> (context) { "bearer #{context.cookies['_graphql_token']}" }
+    GraphiQL::Rails.config.headers['Authorization'] = ->(context) { "bearer #{context.cookies['_graphql_token']}" }
     ```
 
 ### Development

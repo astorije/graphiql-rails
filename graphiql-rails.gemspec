@@ -12,17 +12,18 @@ Gem::Specification.new do |s|
   s.authors     = ["Robert Mosolgo"]
   s.email       = ['rdmosolgo@gmail.com']
   s.license     = "MIT"
-  s.required_ruby_version = '>= 2.1.0' # bc optional keyword args
+  ### Unofficial Ruby 1.9.3 support
+  s.required_ruby_version = '1.9.3'
 
   s.files = Dir["{app,config,lib}/**/*", "MIT-LICENSE", "readme.md"]
   s.test_files = Dir["test/**/*"]
 
-  s.add_runtime_dependency "rails"
+  ### Unofficial Ruby 1.9.3 support
+  s.add_runtime_dependency "rails", "~> 3.2.22.1"
 
   s.add_development_dependency "sqlite3"
-  s.add_development_dependency "codeclimate-test-reporter", '~>0.4'
-  s.add_development_dependency "minitest", "~> 5"
-  s.add_development_dependency "minitest-focus", "~> 1.1"
-  s.add_development_dependency "minitest-reporters", "~>1.0"
-  s.add_development_dependency "rake", "~> 11.0"
+  s.add_development_dependency "minitest"
+  s.add_development_dependency "minitest-focus"
+  s.add_development_dependency "minitest-reporters"
+  s.add_development_dependency "rake"
 end

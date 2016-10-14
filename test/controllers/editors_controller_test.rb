@@ -41,7 +41,7 @@ module GraphiQL
       end
 
       test "it renders headers" do
-        GraphiQL::Rails.config.headers["Nonsense-Header"] = -> (view_ctx) { "Value" }
+        GraphiQL::Rails.config.headers["Nonsense-Header"] = ->(view_ctx) { "Value" }
         get :show, graphql_path: "/my/endpoint"
         assert_includes(@response.body, %|"Nonsense-Header": "Value"|)
         assert_includes(@response.body, %|"X-CSRF-Token": "|)
